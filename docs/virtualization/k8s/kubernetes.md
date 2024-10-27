@@ -38,3 +38,19 @@ Here are the two command line to setup calico:
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.2/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.2/manifests/custom-resources.yaml
 ```
+
+## Storage 
+
+(We are going to use longhorn but take a look at rook ect)
+You need to take a look at the documentation https://longhorn.io/docs/1.7.2/deploy/install/
+
+First install the requirements:
+```bash
+sudo apt install open-iscsi
+sudo systemctl enable --now iscsid
+```
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.7.2/deploy/longhorn.yaml
+```
+
