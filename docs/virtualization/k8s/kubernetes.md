@@ -27,3 +27,14 @@ And to init the cluster
 ```bash
 sudo kubeadm init --config /etc/kubernetes/kube-config.yaml
 ```
+
+
+## Networking
+
+(We are gonna use calico but you can use flannel or anything you want it is gonna be similar)
+Now we are ready to setup our network
+Here are the two command line to setup calico:
+```bash
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.2/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.2/manifests/custom-resources.yaml
+```
